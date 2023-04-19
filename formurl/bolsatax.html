@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>
+	<title>Query string</title>
+	</head>
+    <script>
+	
+	//ssuming that our URL is https://example.com/?product=shirt&color=blue&newuser&size=m
+	//la que yo uso es https://estotrader.github.io/bolsatax.html?product=tutia
+	const queryString = window.location.search;
+	console.log(queryString);
+	// ?product=shirt&color=blue&newuser&size=m
+	
+	const urlParams = new URLSearchParams(queryString);
+	const product = urlParams.get('product')
+	console.log(product);
+
+	</script>  
+    
+	<body>
+     <h1>
+      the value for number is:
+      <script type="text/javascript">
+        document.write(product)
+      </script>
+    </h1>
+    
+ <!-- ejemplo base -->
+ <input type="text" id="mytext">
+  <script type="text/javascript">
+    var msg = "Hello World!";
+    document.getElementById("mytext").value = msg;
+  </script>
+    
+    <form action="/url" method="GET">
+        <p>Please enter some text below:</p>
+      	<!-- variable product en el form -->
+         <input type="text" id="2mytext">
+           <script type="text/javascript">
+
+    		var msg = "Hello World!";
+   			 document.getElementById("2mytext").value = product;
+
+  		</script>
+      	
+    </form>
+    
+    <br><br>
+    
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <!-- Identify your business so that you can collect the payments. --> <input type="hidden" name="business" value="herschelgomez@xyzzyu.com"> <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick"> <!-- Specify details about the item that buyers will purchase. --> <input type="hidden" name="item_name" value="Hot Sauce-12 oz. Bottle"> <input type="hidden" name="amount" value="29"> <input type="hidden" name="currency_code" value="EUR"> <!-- Provide the buyer with a text box option field. --> <input type="hidden" name="on0" value="strong>Size">Codigo de producto a desbloquear <br /> <input type="text" id="textoserial" name="os0" maxlength="60"> <br /> <!-- Display the payment button. --> <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
+    <script type="text/javascript">
+
+    		
+   			 document.getElementById("textoserial").value = product;
+
+  		</script>
+    
+    </form>
+    
+    
+	</body>
+</html>
