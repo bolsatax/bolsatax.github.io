@@ -16,15 +16,17 @@
 	
 	const urlParams = new URLSearchParams(queryString);
 	const product = urlParams.get('product')
+	const email = urlParams.get('email')
 	console.log(product);
+	console.log(email);
 
 	</script>  
     
 	<body>
      <h1>
-      the value for number is:
+      the value for email is:
       <script type="text/javascript">
-        document.write(product)
+        document.write(email)
       </script>
     </h1>
     
