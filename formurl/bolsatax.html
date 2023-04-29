@@ -4,64 +4,69 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<head>
-	<title>Query string</title>
+	<title>BolsaTax pago</title>
 	</head>
     <script>
 	
 	//ssuming that our URL is https://example.com/?product=shirt&color=blue&newuser&size=m
-	//la que yo uso es https://estotrader.github.io/bolsatax.html?product=tutia
+	//la que yo uso es https://estotrader.github.io/bolsatax.html?product=tutia&email=ejemplo@email.com
 	const queryString = window.location.search;
 	console.log(queryString);
 	// ?product=shirt&color=blue&newuser&size=m
 	
 	const urlParams = new URLSearchParams(queryString);
 	const product = urlParams.get('product')
-	const email = urlParams.get('email')
+	const email = urlParams.get('email')	
 	console.log(product);
 	console.log(email);
+	const concepto ="PC Id=" + product + " Email=" + email
+	console.log(concepto)
+	const cantidadeuros=15
+	console.log(cantidadeuros)
+	const emailpaypal="bolsatax202305@gmail.com"
+	console.log(emailpaypal)
 
 	</script>  
     
 	<body>
      <h1>
-      the value for email is:
+      El precio del la versión completa de BolsaTax para este ordenador es: 
       <script type="text/javascript">
-        document.write(email)
+        document.write(cantidadeuros)
+		
       </script>
+	  €
     </h1>
     
- <!-- ejemplo base -->
- <input type="text" id="mytext">
-  <script type="text/javascript">
-    var msg = "Hello World!";
-    document.getElementById("mytext").value = msg;
-  </script>
     
     <form action="/url" method="GET">
-        <p>Please enter some text below:</p>
-      	<!-- variable product en el form -->
-         <input type="text" id="2mytext">
-           <script type="text/javascript">
-
-    		var msg = "Hello World!";
-   			 document.getElementById("2mytext").value = product;
-
-  		</script>
+        <p>Pagos admitidos: Paypal y Tarjeta de crédito:</p>
+		<p>Una vez realizado el pago, se enviarán las instrucciones de activación en 24-48h al email proporcionado</p>
+    
+		
+		
+	
       	
     </form>
     
     <br><br>
     
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> <!-- Identify your business so that you can collect the payments. --> <input type="hidden" name="business" value="herschelgomez@xyzzyu.com"> <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick"> <!-- Specify details about the item that buyers will purchase. --> <input type="hidden" name="item_name" value="Hot Sauce-12 oz. Bottle"> <input type="hidden" name="amount" value="29"> <input type="hidden" name="currency_code" value="EUR"> <!-- Provide the buyer with a text box option field. --> <input type="hidden" name="on0" value="strong>Size">Codigo de producto a desbloquear <br /> <input type="text" id="textoserial" name="os0" maxlength="60"> <br /> <!-- Display the payment button. --> <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
-    <script type="text/javascript">
+   <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
+   <!-- Identify your business so that you can collect the payments. --> <input type="hidden" id="emailpaypal" name="business" value="antoniogarcia@gmail.com">
+   <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick"> <!-- Specify details about the item that buyers will purchase. -->
+   <input type="hidden" name="item_name" value="BolsaTax Desbloqueo"> <input type="hidden" name="amount" id="cantidad" value="19"> <input type="hidden" name="currency_code" value="EUR"> 
+   <!-- Provide the buyer with a text box option field. --> <input type="hidden" name="on0" value="PC Id y Email">Revise que PC Id y email de contacto de esta caja de texto sean correctos <br /> 
+   <input style="width: 90%; type="text" id="textocaja" name="os0" maxlength="220"> <br />
+     <script type="text/javascript">
 
-    		
-   			 document.getElementById("textoserial").value = product;
+    		var msg = "Hello World!";
+   			 document.getElementById("textocaja").value = concepto;
+			 document.getElementById("cantidad").value = cantidadeuros;
+			 document.getElementById("emailpaypal").value = emailpaypal;
 
-  		</script>
-    
-    </form>
-    
+      </script>
+   <!-- Display the payment button. --> <input type="image" name="submit" border="0" src="https://www.paypal.com/es_ES/i/btn/btn_buynow_LG.gif" alt="Buy Now"> <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+   </form>
     
 	</body>
 </html>
