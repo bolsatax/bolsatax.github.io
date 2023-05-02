@@ -9,7 +9,7 @@
     <script>
 	
 	//ssuming that our URL is https://example.com/?product=shirt&color=blue&newuser&size=m
-	//la que yo uso es https://estotrader.github.io/bolsatax.html?product=tutia&email=ejemplo@email.com
+	//la que yo uso es https://bolsatax.github.io/bolsatax.html?product=tutia&email=ejemplo@email.com
 	const queryString = window.location.search;
 	console.log(queryString);
 	// ?product=shirt&color=blue&newuser&size=m
@@ -54,12 +54,13 @@
    <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
    <!-- Identify your business so that you can collect the payments. --> <input type="hidden" id="emailpaypal" name="business" value="antoniogarcia@gmail.com">
    <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick"> <!-- Specify details about the item that buyers will purchase. -->
-   <input type="hidden" name="item_name" value="BolsaTax Desbloqueo"> <input type="hidden" name="amount" id="cantidad" value="19"> <input type="hidden" name="currency_code" value="EUR"> 
-   <!-- Provide the buyer with a text box option field. --> <input type="hidden" name="on0" value="PC Id y Email">Revise que PC Id y email de contacto de esta caja de texto sean correctos <br /> 
+   <input type="hidden" id="nombre" name="item_name" value="BolsaTax Desbloqueo"> <input type="hidden" name="amount" id="cantidad" value="19"> <input type="hidden" name="currency_code" value="EUR"> 
+   <!-- Provide the buyer with a text box option field. --> <input type="hidden" name="on0" value="Desbloqueo BolsaTax">Revise que el email de contacto de esta caja sea correcto, en caso contrario cierre está página y vuelva a introducirlo desde el excel de Bolsatax <br /> 
    <input style="width: 90%; type="text" id="textocaja" name="os0" maxlength="220"> <br />
      <script type="text/javascript">
 
     		var msg = "Hello World!";
+			 document.getElementById("nombre").value = concepto;
    			 document.getElementById("textocaja").value = concepto;
 			 document.getElementById("cantidad").value = cantidadeuros;
 			 document.getElementById("emailpaypal").value = emailpaypal;
