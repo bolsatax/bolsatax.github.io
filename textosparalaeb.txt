@@ -1,5 +1,0 @@
-Hoja Excel BolsaTax
-
-BolsaTax es una hoja de excel creada para facilitar el cálculo de impuestos en la negociación de activos financieros con el método fifo, admite multidivisa para los que trabajamos con broker multidivisa como IBKR o DeGiro.
-
-
